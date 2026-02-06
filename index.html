@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vehicle Health Checklist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Vehicle Health Checklist</h1>
+    <p class="subtitle">
+      Use this checklist to get a general sense of your car’s condition based on usage, driving feel, and visible signs.
+      This tool does not replace a professional inspection.
+    </p>
+
+    <form id="healthForm">
+      <h2>General Usage</h2>
+      <div class="group">
+        <label>Daily usage level</label>
+        <select name="usage">
+          <option value="0">Light</option>
+          <option value="5">Moderate</option>
+          <option value="10">Heavy</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label>Last service interval</label>
+        <select name="service">
+          <option value="0">Less than 3 months</option>
+          <option value="5">3–6 months</option>
+          <option value="10">More than 6 months</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label>Vehicle age range</label>
+        <select name="age">
+          <option value="0">0–3 years</option>
+          <option value="5">4–7 years</option>
+          <option value="10">8+ years</option>
+        </select>
+      </div>
+
+      <h2>Driving Feel</h2>
+      <div class="checkbox">
+        <input type="checkbox" value="8"> Unusual vibration while driving
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" value="8"> Braking feels weaker than usual
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" value="6"> Steering feels unstable or heavy
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" value="6"> Engine noise has changed
+      </div>
+
+      <h2>Visual & Basic Checks</h2>
+      <div class="checkbox">
+        <input type="checkbox" value="6"> Uneven tire wear
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" value="10"> Warning lights on dashboard
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" value="8"> Visible oil or fluid leaks
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" value="6"> Excessive exhaust smoke
+      </div>
+
+      <button type="button" onclick="calculateHealth()">Check Vehicle Health</button>
+    </form>
+
+    <div id="result" class="result hidden">
+      <h2>Your Vehicle Health Score</h2>
+      <div class="score" id="scoreValue"></div>
+      <div class="status" id="statusText"></div>
+      <p id="explanation"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
